@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+<style>
+
+    [marker]{background-image: url(//maps.gstatic.com/tactile/omnibox/search-nearby-2x.png);
+    text-align: center;
+    }
+    h1{text-align: center;}
+    [map]{display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        /* width: auto !important;
+        height: auto !important; */
+        }
+</style>
+<head>
+  <title>Location Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <h1>전기차 충전소 위치</h1>
+  <div id="map" style="width: 600px; height: 400px;"></div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // 지도를 표시할 div 요소 선택
+    let map = L.map('map').setView([35.1601, 126.8516], 12); // 초기 위치 설정
+
+    // OpenStreetMap 타일 레이어 추가
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 위치 마커 추가
+        let marker = L.marker([35.149136, 126.798320]).addTo(map)
+        .bindPopup('이마트광산점<br>광주광역시 광산구 사암로 172'); // 팝업 설정
+         marker = L.marker([35.204997, 126.857487]).addTo(map)
+        .bindPopup('롯데마트 첨단점<br>광주광역시 광산구 첨단강변로99번길 22');
+        
+</script>
+</body>
+</html>

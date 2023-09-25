@@ -1,0 +1,168 @@
+<style>
+    *{
+  padding:0;
+  margin:0;
+}
+  
+.menu{
+  width:300px;
+  height:40px;
+  text-align:center;
+  line-height: 40px;
+  background-color:brown;
+}
+
+.menu>.sub{
+  height:0;
+  list-style:none;
+  overflow:hidden;
+  transition:height ease-out 1s 0s;
+}
+
+.menu>.sub li{
+  background-color:orange;
+  border-top:1px white solid;
+}
+
+.menu>.sub li>a{
+  text-decoration:none;
+  color:black;
+}
+</style>
+
+<body>
+
+    <s_t3>
+        <script type="text/javascript">
+        //<![CDATA[
+        function clickshow(elem,column1) {
+         var menu = document.getElementById(column1);
+         if (elem.className !='closed') {
+            elem.className = 'closed';
+            menu.style.display = "none";
+         } else {
+            elem.className ='opened';
+            menu.style.display ="block";
+        }}
+        //]]>
+        </script>
+        </s_t3>
+
+      <!-- <script type="text/javascript"> -->
+            <!-- //<![CDATA[ -->
+
+            <!-- // function clickshow(elem,ID) {
+            //  var menu = document.getElementById(ID);
+            //  if (elem.className !='closed') {
+            //     elem.className = 'closed';
+            //     menu.style.display = "none";
+            //  } else {
+            //     elem.className ='opened';
+            //     menu.style.display ="block";
+            // }}
+            //]]>
+            </script> -->
+             
+
+
+    <div class="navbar">
+        <!-- <a href="#home">Home</a>
+    <a href="#news">News</a> -->
+        <div class="dropdown">
+            <button class="dropbtn" >전체메뉴
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="header">
+                    <h2>Mega Menu</h2>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <h3 class="closed" onclick="clickshow(this,'Category')">Category_1</h3>
+                        <div id="column" style="display: none;">
+                        <p>
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </p>
+                        
+                    </div>
+                    <!-- <div class="row"> -->
+                    <div class="column">
+                        <h3 class="closed" onclick="clickshow(this,'column')">Category_2</h3>
+                        <div id="column1" style="display: none;">
+                        <p>
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                            <a href="#">Link 4</a>
+                            <a href="#">Link 5</a>
+                            <a href="#">Link 6</a>
+                        </p>
+                    </div>
+                    <div class="column2">
+                        <h3 class="closed" onclick="clickshow(this,'column')">Category_3</h3>
+                        <div id="column2" style="display: none;">
+                        <p>
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </p>
+                    </div>
+                    <div class="column">
+                        <h3 class="closed" onclick="clickshow(this,'column')">Category_4</h3>
+                        <div id="column3" style="display: none;">
+                        <p>
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+            
+            <!-- <s_sidebar_element> -->
+                <!-- 카테고리 -->
+            <!-- <h3 class="closed" onclick="clickshow(this,'categories')">처음에는 닫힌 폴더</h3>
+            <div id="categories" style="display: none;">
+            <ol>
+            <li>첫번째 요소</li>
+            <li>두번째 요소</li>
+            <li>그럼 안녕</li>
+            </ol>
+            </div>
+            <br> -->
+
+<!-- <div class="dropdown">
+            <button class="dropbtn">Home
+                <i class="fa fa-caret-down"></i>
+                </button>
+          <div class="dropdown-content">
+            <div class="header">
+              <h2>Mega Menu</h2>
+            </div>
+            <div class="row">
+              <div class="column">
+                <h3>Category 1</h3>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div> -->
+<!-- <div class="column">
+                <h3>Category 2</h3>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+              <div class="column">
+                <h3>Category 3</h3>
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div> -->
+<!-- </div>
+          </div>
+        </div>
+      </div> -->

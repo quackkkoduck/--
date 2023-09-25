@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    /* 스타일 시트로 CSS 스타일을 정의합니다. */
+    [marker] {
+        background-image: url(//maps.gstatic.com/tactile/omnibox/search-nearby-2x.png);
+        text-align: center;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    [map] {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <title>KakaoMap Marker Example</title>
+    <!-- Kakao Maps JavaScript SDK를 로드합니다. -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=dad91c4125f2970838a036576aab3cdc&libraries=services"></script>
+</head>
+
+<body>
+    <h1>전기차 충전소 위치</h1>
+    <!-- 지도를 표시할 div 요소를 생성합니다. -->
+    <div id="map" style="width: 300px; height: 200px;"></div>
+    <script>
+        // 카카오맵 API 초기화
+        kakao.maps.load(function () {
+            var container = document.getElementById('map');
+            var options = {
+                center: new kakao.maps.LatLng(35.1601, 126.8516), // 지도 초기 중심 좌표
+                level: 12 // 지도 초기 확대 수준
+            };
+
+            // 지도 생성
+            var map = new window.maps.Map(container, options);
+
+            // 마커 정보를 객체 배열로 관리
+            var markerData = [
+                {
+                    title: '이마트광산점',
+                    content: '광주광역시 광산구 사암로 172',
+                    latitude: 35.149136,
+                    longitude: 126.798320
+                },
+                {
+                    title: '롯데마트 첨단점',
+                    content: '광주광역시 광산구 첨단강변로99번길 22',
+                    latitude: 35.204997,
+                    longitude: 126.857487
+                }
+            ];
+
+            // 정보 창 변수 및 클릭 상태 변수 추가
+            var infowindow = new kakao.maps.InfoWindow({
+                content: '',
+            });
+            var isInfoWindowOpen = false;
+
+            // 마커 생성 및 이벤트 리스너 등록
+            for (var i = 0; i < markerData.length; i++) {
+                (function (markerInfo) {
+                    var markerPosition = new kakao.maps.LatLng(markerInfo.latitude, markerInfo.longitude);
+                    var marker = new kakao.maps.Marker({
+                        position: markerPosition,
+                        title: markerInfo.title,
+                        map: map
+                    });
+
+                    kakao.maps.event.addListener(marker, 'click', function () {
+                        if (isInfoWindowOpen) {
+                            infowindow.close();
+                            isInfoWindowOpen = false;
+                        } else {
+                            infowindow.setContent('<div style="width:200px; text-align:center;">' + markerInfo.title + '<br>' + markerInfo.content + '</div>');
+                            infowindow.open(map, marker);
+                            isInfoWindowOpen = true;
+                        }
+                    });
+                })(markerData[i]);
+            }
+        });
+    </script>
+</body>
+
+</html>

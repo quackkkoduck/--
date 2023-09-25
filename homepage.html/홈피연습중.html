@@ -1,0 +1,69 @@
+<style>
+*{
+  padding:0;
+  margin:0;
+}
+  
+.menu{
+  width:300px;
+  height:40px;
+  text-align:center;
+  line-height: 40px;
+  background-color:brown;
+}
+
+.menu>.sub{
+  height:0;
+  list-style:none;
+  overflow:hidden;
+  transition:height ease-out 1s 0s;
+}
+
+.menu>.sub li{
+  background-color:orange;
+  border-top:1px white solid;
+}
+
+.menu>.sub li>a{
+  text-decoration:none;
+  color:black;
+}
+</style>
+
+<body>
+    <s_t3>
+        <script type="text/javascript">
+        //<![CDATA[
+        function clickshow(elem,ID) {
+         var menu = document.getElementById(ID);
+         if (elem.className !='closed') {
+            elem.className = 'closed';
+            menu.style.display = "none";
+         } else {
+            elem.className ='opened';
+            menu.style.display ="block";
+        }}
+        //]]>
+        </script>
+        </s_t3>
+        
+        <s_sidebar_element><!-- 카테고리 -->
+        <h3 class="closed" onclick="clickshow(this,'categories')">전체메뉴</h3>
+        <div id="categories" style="display: none;">
+        <ol>
+        <li>첫번째 요소</li>
+        <li>두번째 요소</li>
+        <li>그럼 안녕</li>
+        </ol>
+        </div>
+        <br>
+        
+        <!-- <h3 onclick="clickshow(this,'trackblock')">열어두었다가 닫는 폴더</h3>
+        <div id="trackblock">
+        <ol>
+        <li>첫번째 요소</li>
+        <li>두번째 요소</li>
+        <li>그럼 안녕</li>
+        </ol>
+        </div> -->
+</body>
